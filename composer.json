@@ -1,0 +1,19 @@
+{
+    "name": "Ginger",
+    "descripton": "Hierarchical event manager",
+    "author": "Jack Skinner <sydnerdrage@gmail.com>",
+    "require-dev": {
+        "phpunit/phpunit": "3.7.*",
+        "satooshi/php-coveralls": "dev-master",
+        "squizlabs/php_codesniffer": "1.4.*@stable"
+    },
+    "config": {
+        "vendor-dir": "vendor"
+    },
+    "autoload": {
+        "psr-4": {
+            "Ginger": "src/",
+            "Ginger\\Tests": "tests/"
+        }
+    }
+}
