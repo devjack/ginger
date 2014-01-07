@@ -36,13 +36,28 @@ class MatcherTest extends \PHPUnit_Framework_TestCase
     {
         $event = 'ginger.test.trigger';
         // Normally the events are the key, so flip this basic list
-        $listeners = array_flip(array(
-            'ginger.test.trigger'
-        ));
+        $listeners = array_flip(
+            array(
+                'ginger.test.trigger'
+            )
+        );
 
         $this->assertGreaterThan(0, Matcher::filter($event, $listeners));
     }
 
+    public function testSingleWildcardMatch()
+    {
+        $event = "ginger.test.trigger";
+
+        $listeners = array_flip(
+            array(
+                'ginger.*.trigger'
+            )
+        );
+
+        $matches = Matcher::filter($event, $listeners);
+        $this->assertGreaterThan(0, count($matches));
+    }
 
 }
  
