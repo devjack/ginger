@@ -2,7 +2,7 @@
 
 namespace Ginger\Test\Cases;
 
-use Ginger\Util\Matcher;
+use Ginger\Util\Filter;
 
 /**
  *  Ginger\Util\Test  class
@@ -42,21 +42,28 @@ class MatcherTest extends \PHPUnit_Framework_TestCase
             )
         );
 
-        $this->assertGreaterThan(0, Matcher::filter($event, $listeners));
+        $matcher = new Filter();
+        
+        $this->assertGreaterThan(0, $matcher->filter($event, $listeners));
     }
 
     public function testSingleWildcardMatch()
     {
         $event = "ginger.test.trigger";
 
+        // All of these should be match the above
         $listeners = array_flip(
             array(
-                'ginger.*.trigger'
+                'ginger.*.trigger',
+                'ginger.test.*',
+                '*.test.trigger'
             )
         );
 
-        $matches = Matcher::filter($event, $listeners);
-        //$this->assertGreaterThan(0, count($matches));
+        $matcher = new Filter();
+
+        $matches = $matcher->filter($event, $listeners);
+        //$this->assertEquals(count($listeners), count($matches));
     }
 
 }

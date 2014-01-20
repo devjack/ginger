@@ -11,9 +11,10 @@
         "vendor-dir": "vendor"
     },
     "autoload": {
-        "psr-0": {
-            "Ginger": "src/",
-            "Ginger\\Tests": "tests/"
+        "psr-4": {
+            "Ginger\\": "src/",
+            "Ginger\\Tests\\": "tests/GingerTests/",
+            "Ginger\\TestAssets\\": "tests/GingerTestAssets/"
         }
     }
 }

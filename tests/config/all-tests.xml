@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<phpunit bootstrap="./vendor/autoload.php">
+<phpunit bootstrap="../../vendor/autoload.php">
     <testsuites>
         <testsuite name="Test Suite">
-            <directory>./tests/Ginger/Test</directory>
+            <directory>../GingerTests</directory>
         </testsuite>
     </testsuites>
 </phpunit>
