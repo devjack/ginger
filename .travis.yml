@@ -11,8 +11,7 @@ script:
 # - mkdir -p build/logs
 # - vendor/bin/phpcs --standard=PSR2 src/
 # - vendor/bin/phpcs --standard=PSR2 tests/
- - cd tests
-  && ../vendor/bin/phpunit --coverage-html ./coverage/ --configuration ./config/all-tests.xml
+ - cd tests && ../vendor/bin/phpunit --coverage-html ./coverage/ --configuration ./config/all-tests.xml
 
 after_script:
 # - vendor/bin/coveralls -v
