@@ -8,9 +8,9 @@ before_script:
  - pyrus install pear/PHP_CodeSniffer
 
 script:
- - mkdir -p build/logs
- - vendor/bin/phpcs --standard=PSR2 src/
- - vendor/bin/phpcs --standard=PSR2 tests/
+# - mkdir -p build/logs
+# - vendor/bin/phpcs --standard=PSR2 src/
+# - vendor/bin/phpcs --standard=PSR2 tests/
  - cd tests; ./dev-all-tests.sh
 
 after_script:

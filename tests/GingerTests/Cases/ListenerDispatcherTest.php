@@ -32,7 +32,7 @@ use Ginger\Util\Filter;
  * @link     http://www.sydnerdrage.com/semver
  */
 
-class Test extends \PHPUnit_Framework_TestCase {
+class ListenerDispatcherTest extends \PHPUnit_Framework_TestCase {
 
     public function testClosureDispatch()
     {
