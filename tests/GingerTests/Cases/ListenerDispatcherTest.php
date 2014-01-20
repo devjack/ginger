@@ -89,14 +89,14 @@ class ListenerDispatcherTest extends \PHPUnit_Framework_TestCase {
                         // $assert is passed by reference.
                         $assert[] = 'second';
                     },
-                "priority" => 80,
+                "priority" => 90,
             )
         );
         $dispatcher->addListeners($config);
         $dispatcher->dispatch($event);
         //  This should be true if the listener ran.  If not, test fails!
-        $this->assertEquals("first", $assert[0]);
-        $this->assertEquals("second", $assert[1]);
+        $this->assertEquals("second", $assert[0]);
+        $this->assertEquals("first", $assert[1]);
     }
 
 
