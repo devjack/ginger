@@ -1,5 +1,5 @@
 {
-    "name": "Ginger",
+    "name": "sydnerdrage/ginger",
     "descripton": "Hierarchical event manager",
     "author": "Jack Skinner <sydnerdrage@gmail.com>",
     "require-dev": {
