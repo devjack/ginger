@@ -73,11 +73,11 @@ class Filter
             return true;
         }
 
-        if ($this->singleWildcard($subject, $patterns)) {
+        if ($this->singleWildcard($subject, $pattern)) {
             return true;
         }
 
-        if ($this->doubleWildcard($subject, $patterns)) {
+        if ($this->doubleWildcard($subject, $pattern)) {
             return true;
         }
 
@@ -91,6 +91,9 @@ class Filter
      */
     protected function singleWildcard($subject, $patterns)
     {
+        if(!is_array($patterns)) {
+            $patterns = array($patterns);
+        }
         $matches = array();
         foreach($patterns as $pattern => $index) {
             if($this->singleWildcardMatches($subject, $pattern)) {
